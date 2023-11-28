@@ -1,12 +1,29 @@
-#!/usr/bin/python3
-def to_uper(character):
-    if ord(character) >= 97 and ord(character) <= 122:
-        return (ord(character) - 32)
-    else:
-        return ord(character)
-::w
-def uppercase(string):
-    string_new = ""
-    for character in string:
-        string_new += "%c" % to_uper(character)
-    print("{:s}".format(string_new))
+#include <stdio.h>
+#include <stdlib.h>
+
+/**
+ * main - Entry Point
+ *
+ * Description: Using putchar to output base 16
+ *
+ * Return: Alawys 0 (Success)
+ */
+
+int main(void)
+{
+	char hex = 0;
+	char letters = 'a';
+
+	while (letters <= 'f')
+	{
+		while (hex < 10)
+		{
+			putchar(hex % 10 + '0');
+			hex++;
+		}
+		putchar(letters);
+		letters++;
+	}
+	putchar('\n');
+	return (0);
+}
